@@ -199,16 +199,6 @@ on property:sys.usb.config=fastboot && property:sys.usb.ffs.ready=1 && property:
 # on early-boot
 on property:sys.pdp.action=ramloading
     pdp_rcvr rcvr_load_ram
- 
-# DSMS
-on boot
-    start dsmsd
- 
-service dsmsd /system/bin/dsms
-    disabled
-    user 5031
-    group 5031
-    seclabel u:r:dsms:s0
 
 service selinux-permissive /system/bin/selinux-permissive
     disabled

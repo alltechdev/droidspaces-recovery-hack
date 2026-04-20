@@ -1,0 +1,20 @@
+# Aliases for symbols, used by symbol_request().
+alias symbol:stui_clear_mask tuihw_inf
+alias symbol:sec_cmd_set_cmd_result_all sec_cmd
+alias symbol:stui_get_tui_version tuihw_inf
+alias symbol:stui_set_tui_version tuihw_inf
+alias symbol:stui_tsp_enter focaltech_tp
+alias symbol:stui_get_mode tuihw_inf
+alias symbol:sec_cmd_set_default_result sec_cmd
+alias symbol:sec_ex_mode_switch focaltech_tp
+alias symbol:stui_get_touch_type tuihw_inf
+alias symbol:stui_cancel_session tuihw_inf
+alias symbol:sec_cmd_exit sec_cmd
+alias symbol:stui_set_touch_type tuihw_inf
+alias symbol:stui_tsp_exit focaltech_tp
+alias symbol:stui_set_mask tuihw_inf
+alias symbol:sec_cmd_set_cmd_result sec_cmd
+alias symbol:sec_cmd_set_cmd_exit sec_cmd
+alias symbol:stui_set_mode tuihw_inf
+alias symbol:sec_cmd_init sec_cmd
+alias symbol:stui_tsp_type focaltech_tp

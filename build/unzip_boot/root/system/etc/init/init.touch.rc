@@ -1,0 +1,10 @@
+service focaltech-tp /system/bin/modprobe -d /vendor/lib/modules --all=/vendor/lib/modules/modules.load
+    user root
+    group root
+    oneshot
+    disabled
+    seclabel u:r:recovery:s0
+
+on boot
+    write /sys/module/firmware_class/parameters/path /vendor/firmware,/nvdata/APCFG/APRDEB,/efs/wifi
+    start focaltech-tp

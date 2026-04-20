@@ -1,0 +1,19 @@
+btif_drv.ko:
+ccmni.ko: rps_perf.ko
+ccci_util_lib.ko:
+mtk_tinysys_ipi.ko: mtk_rpmsg_mbox.ko mtk-mbox.ko
+mtk_dynamic_loading_throttling.ko: mtk_low_battery_throttling.ko
+connadp.ko:
+rps_perf.ko:
+wlan_drv_gen4m_6835.ko: mddp.ko wmt_chrdev_wifi.ko wmt_drv.ko btif_drv.ko ccci_md_all.ko mtk_pbm.ko mtk_mdpm.ko mtk_dynamic_loading_throttling.ko mtk_low_battery_throttling.ko ccci_auxadc.ko ccci_util_lib.ko ccmni.ko rps_perf.ko connadp.ko
+mddp.ko: ccci_md_all.ko mtk_pbm.ko mtk_mdpm.ko mtk_dynamic_loading_throttling.ko mtk_low_battery_throttling.ko ccci_auxadc.ko ccci_util_lib.ko ccmni.ko rps_perf.ko
+mtk_rpmsg_mbox.ko: mtk-mbox.ko
+mtk-mbox.ko:
+mtk_pbm.ko: mtk_mdpm.ko mtk_dynamic_loading_throttling.ko mtk_low_battery_throttling.ko
+wmt_drv.ko: btif_drv.ko ccci_md_all.ko mtk_pbm.ko mtk_mdpm.ko mtk_dynamic_loading_throttling.ko mtk_low_battery_throttling.ko ccci_auxadc.ko ccci_util_lib.ko ccmni.ko rps_perf.ko connadp.ko
+ccci_md_all.ko: mtk_pbm.ko mtk_mdpm.ko mtk_dynamic_loading_throttling.ko mtk_low_battery_throttling.ko ccci_auxadc.ko ccci_util_lib.ko ccmni.ko rps_perf.ko
+mtk_low_battery_throttling.ko:
+bt_drv_connac1x.ko: wmt_drv.ko btif_drv.ko ccci_md_all.ko mtk_pbm.ko mtk_mdpm.ko mtk_dynamic_loading_throttling.ko mtk_low_battery_throttling.ko ccci_auxadc.ko ccci_util_lib.ko ccmni.ko rps_perf.ko connadp.ko
+ccci_auxadc.ko: ccci_util_lib.ko
+wmt_chrdev_wifi.ko: wmt_drv.ko btif_drv.ko ccci_md_all.ko mtk_pbm.ko mtk_mdpm.ko mtk_dynamic_loading_throttling.ko mtk_low_battery_throttling.ko ccci_auxadc.ko ccci_util_lib.ko ccmni.ko rps_perf.ko connadp.ko
+mtk_mdpm.ko:

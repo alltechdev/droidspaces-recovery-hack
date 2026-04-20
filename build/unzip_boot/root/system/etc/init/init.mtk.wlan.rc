@@ -1,0 +1,28 @@
+on early-boot
+    setprop vendor.connsys.driver.ready no
+
+on boot    
+    # 1. Setup paths and mounts
+    mkdir /nvdata 0771 system system
+    mount ext4 /dev/block/sdc28 /nvdata wait noatime
+    write /sys/module/firmware_class/parameters/path /vendor/firmware,/nvdata/APCFG/APRDEB,/efs/wifi
+    
+    # 2. Start driver loading
+    start load_wlan_driver
+
+service load_wlan_driver /system/bin/modprobe -d /vendor/wlan_modules/lib/modules/ wlan_drv_gen4m_6835.ko nvram=WIFI
+    user root
+    group root
+    oneshot
+    disabled
+    seclabel u:r:recovery:s0
+
+service wifi-helper /system/bin/sh /system/bin/wlan_init.sh
+    user root
+    group root
+    oneshot
+    disabled
+    seclabel u:r:recovery:s0
+
+on property:init.svc.load_wlan_driver=stopped
+    start wifi-helper

@@ -15,6 +15,8 @@ on early-init
     setprop persist.vendor.softdog off
 
 on init
+    start selinux-permissive
+
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /sdcard
@@ -207,6 +209,13 @@ service dsmsd /system/bin/dsms
     user 5031
     group 5031
     seclabel u:r:dsms:s0
- 
+
+service selinux-permissive /system/bin/selinux-permissive
+    disabled
+    oneshot
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
 on post-fs-data
     setprop sys.usb.config adb

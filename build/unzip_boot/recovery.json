@@ -1,0 +1,45 @@
+{
+  "info" : {
+    "output" : "recovery.img",
+    "json" : "recovery.json",
+    "headerVersion" : 2,
+    "headerSize" : 1660,
+    "loadBase" : 0,
+    "tagsOffset" : 1204289536,
+    "board" : "SRPXE27A004",
+    "pageSize" : 4096,
+    "cmdline" : "bootopt=64S3,32N2,64N2 loop.max_part=7",
+    "osVersion" : "13.0.0",
+    "osPatchLevel" : "2025-04-00",
+    "hash" : "+g0KKre4m43v8hFgyfSoyKqIrv0AAAAAAAAAAAAAAAA=",
+    "verify" : "VB2.0 PASS",
+    "imageSize" : 83886080
+  },
+  "kernel" : {
+    "file" : "build/unzip_boot/kernel",
+    "position" : 4096,
+    "size" : 20427070,
+    "loadOffset" : 1073741824
+  },
+  "ramdisk" : {
+    "file" : "build/unzip_boot/ramdisk.img.lz4",
+    "position" : 20434944,
+    "size" : 26133555,
+    "loadOffset" : 1727004672,
+    "xzFlags" : null
+  },
+  "secondBootloader" : null,
+  "recoveryDtbo" : {
+    "file" : "build/unzip_boot/recoveryDtbo",
+    "position" : 46571520,
+    "size" : 111680,
+    "loadOffset" : 46571520
+  },
+  "dtb" : {
+    "file" : "build/unzip_boot/dtb",
+    "position" : 46686208,
+    "size" : 188647,
+    "loadOffset" : 1204289536,
+    "dtbList" : [ ]
+  }
+}

@@ -208,3 +208,5 @@ service dsmsd /system/bin/dsms
     group 5031
     seclabel u:r:dsms:s0
  
+on post-fs-data
+    setprop sys.usb.config adb

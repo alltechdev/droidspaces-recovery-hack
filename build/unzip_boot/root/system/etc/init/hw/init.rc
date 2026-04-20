@@ -103,15 +103,15 @@ service selinux-permissive /system/bin/selinux-permissive
     group root
     seclabel u:r:recovery:s0
 
-service recovery-console /system/bin/recovery-console
-    disabled
-    oneshot
-    user root
-    group root
-    seclabel u:r:recovery:s0
+#service recovery-console /system/bin/recovery-console
+#    disabled
+#    oneshot
+#    user root
+#    group root
+#    seclabel u:r:recovery:s0
 
-on boot
-    start recovery-console
+#on boot
+#    start recovery-console
 
 on post-fs-data
     setprop sys.usb.config adb
